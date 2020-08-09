@@ -9,7 +9,7 @@ import searchReducer from '../reducers/searchReducer'
 const reducer = combineReducers({
   champions: championReducer,
   player: playerReducer,
-  search: searchReducer
+  search: searchReducer,
 })
 
 const store = createStore(

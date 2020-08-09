@@ -26,6 +26,10 @@
     "no-process-exit": "off",
     "arrow-body-style":"off",
     "no-fallthrough":"off",
-    "import/no-extraneous-dependencies": "off"
+    "import/no-extraneous-dependencies": "off",
+    "no-confusing-arrow":"off",
+    "arrow-parens": "off",
+    "import/prefer-default-export":"off",
+    "no-unneeded-ternary":"off"
   }
 }

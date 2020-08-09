@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components'
 import Navbar from './components/Navbar'
 import PlayerSearchForm from './components/PlayerSearchForm'
-import PlayerStatistics from './components/PlayerStatistics'
+import PlayerStatistics from './components/statistics/PlayerStatistics'
 
 const GlobalStyle = createGlobalStyle`
   body {

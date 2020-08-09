@@ -3,12 +3,12 @@ import styled from 'styled-components'
 import { useSelector, useDispatch } from 'react-redux'
 import { setPlayerStats } from '../reducers/playerReducer'
 import { setSearchParams } from '../reducers/searchReducer'
-
+import { statsCalc } from '../services/statsCalc'
 
 const StyledForm = styled.form`
-  height: ${({isSearch}) => isSearch ? '20vh' : '100vh'};
+  height: ${({ isSearch }) => isSearch ? '20vh' : '100vh'};
   width: 100vw;
-  background: #f05545;
+  background: #1F2833;
   display:flex;
   justify-content: center;
   align-items: center;
@@ -29,7 +29,7 @@ const StyledInput = styled.input`
 
 const StyledButton = styled.button`
   border: none;
-  background: #b71c1c;
+  background: #40507B;
   border-radius: 0px 10px 10px 0px;
   width: 12vw;
   max-width: 100px;
@@ -59,14 +59,12 @@ const StyledSelector = styled.select`
 `
 
 const PlayerSearchForm = () => {
-
   const search = useSelector(state => state.search)
+
   const dispatch = useDispatch()
 
   const searchHandler = async (event) => {
     event.preventDefault()
-
-    console.log(search)
 
     const searchParam = event.target.search.value
     const regionParam = event.target.region.value
@@ -76,7 +74,10 @@ const PlayerSearchForm = () => {
   }
 
   return (
-    <StyledForm onSubmit={searchHandler} isSearch={search === undefined || search.length == 0 ? false : true}>
+    <StyledForm
+      onSubmit={searchHandler}
+      isSearch={search === undefined || search.length === 0 ? false : true}
+    >
       <StyledSelector name="region">
         <option value="na1">NA</option>
         <option value="euw1">EUW</option>

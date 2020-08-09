@@ -5,7 +5,7 @@ const StyledNavbar = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #7f0000;
+    background: #0B0C10;
     height: 5vh;
     width: 100vw;
 `
