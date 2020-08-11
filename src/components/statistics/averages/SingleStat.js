@@ -5,7 +5,6 @@ import PropTypes from 'prop-types'
 const StyledStatistic = styled.p`
   color:${({ parColor }) => parColor || 'white'};
 `
-// Add PropTypes
 const SingleStat = ({ info, color, statName }) => {
   return (
     <StyledStatistic parColor={color}>

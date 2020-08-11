@@ -11,7 +11,6 @@ export const setPlayerStats = (nickname, region) => {
 }
 
 const reducer = (state = [], action) => {
-  console.log('In playerReducer ====> ', state, action)
   switch (action.type) {
     case 'SET_PLAYER_STATS': {
       return action.data

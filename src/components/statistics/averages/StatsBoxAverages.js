@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { useSelector } from 'react-redux'
 import SingleStat from './SingleStat'
+import SearchAnimation from '../../SearchAnimation'
 
 const StyledBoxContainer = styled.div`
   display: flex;
@@ -9,6 +10,7 @@ const StyledBoxContainer = styled.div`
   justify-content: start;
   align-items: center;
   width: 20vw;
+  min-width: 250px;
   background: #344164;
 
   border-radius: 14px; 
@@ -21,25 +23,18 @@ const StyledLabel = styled.h3`
 const StatsBoxAverages = () => {
   // All matches and stats are to be kept inside the store's state
   // for use in later stages of the application
-  const playerData = useSelector(state => state.player[0])
 
-  const kda = () => {
-    const kills = (playerData.kills / playerData.games).toFixed(1)
-    const assists = (playerData.assists / playerData.games).toFixed(1)
-    const deaths = (playerData.deaths / playerData.games).toFixed(1)
-
-    return (
-      <SingleStat info={`${kills} / ${deaths} / ${assists}`} color="red"></SingleStat>
-    )
-  }
+  const playerData = useSelector(state => state.player.combinedStats)
 
   const generateStatParagraphs = () => {
-    if (playerData === undefined || playerData.length === 0) {
+    if (playerData === undefined) {
       return (
-        // Change
-        <p>awaiting results...</p>
+        <SearchAnimation />
       )
     }
+
+    console.log(playerData)
+
     const kills = (playerData.kills / playerData.games).toFixed(1)
     const assists = (playerData.assists / playerData.games).toFixed(1)
     const deaths = (playerData.deaths / playerData.games).toFixed(1)
