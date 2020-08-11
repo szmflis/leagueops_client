@@ -14,7 +14,7 @@ const StyledContainer = styled.div`
   
   
   justify-content: center;
-  border: 1px solid blue;
+  // border: 1px solid blue;
 `
 
 const StyledStatsContainer = styled.div`
@@ -24,7 +24,7 @@ const StyledStatsContainer = styled.div`
   max-width: 1200px;
   height: 60vh;
 
-  border: 1px solid red;
+  //border: 1px solid red;
 `
 
 const PlayerStatistics = () => {
