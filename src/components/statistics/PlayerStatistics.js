@@ -1,17 +1,20 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import styled from 'styled-components'
-import StatsBoxAverages from './StatsBoxAverages'
+import StatsBoxAverages from './averages/StatsBoxAverages'
 
 const StyledContainer = styled.div`
-  height: ${({ isSearch }) => isSearch ? '80vh' : '0vh'};
+  height: 80vh;
   width: 100vw;
   background: #1F2833;
-  padding-top: 100px;
-  display: flex;
-  justify-content: center;
 
-  border: 1px solid green;
+
+  display: ${({ isSearch }) => isSearch ? 'flex' : 'none'};
+  visibility: ${({ isSearch }) => isSearch ? 'visible' : 'hidden'};
+  
+  
+  justify-content: center;
+  border: 1px solid blue;
 `
 
 const StyledStatsContainer = styled.div`
@@ -21,13 +24,7 @@ const StyledStatsContainer = styled.div`
   max-width: 1200px;
   height: 60vh;
 
-  // border: 1px solid blue;
-`
-
-const StyledStatsWindow = styled.div`
-  width: 20vw;
-  padding: 20px;
-  border: 2px solid black;
+  border: 1px solid red;
 `
 
 const PlayerStatistics = () => {
@@ -41,12 +38,6 @@ const PlayerStatistics = () => {
     >
       <StyledStatsContainer>
         <StatsBoxAverages />
-        <StyledStatsWindow>
-          something2
-        </StyledStatsWindow>
-        <StyledStatsWindow>
-          something3
-        </StyledStatsWindow>
       </StyledStatsContainer>
     </StyledContainer>
   )

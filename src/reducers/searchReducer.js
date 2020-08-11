@@ -8,7 +8,7 @@ export const setSearchParams = (nickname, region) => {
   }
 }
 
-const reducer = (state = ['delete this state later'], action) => {
+const reducer = (state = [], action) => {
   console.log('In searchReducer ====> ', state, action)
   switch (action.type) {
     case 'SET_SEARCH_PARAMS': {

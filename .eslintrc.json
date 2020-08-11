@@ -30,6 +30,8 @@
     "no-confusing-arrow":"off",
     "arrow-parens": "off",
     "import/prefer-default-export":"off",
-    "no-unneeded-ternary":"off"
+    "no-unneeded-ternary":"off",
+    "react/self-closing-comp":"off",
+    "react/jsx-one-expression-per-line": "off"
   }
 }
