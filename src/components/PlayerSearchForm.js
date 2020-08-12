@@ -50,8 +50,10 @@ const StyledButton = styled.button`
 const StyledSelector = styled.select`
   width: 4vw;
   height: 6vh;
+  background-color: white;
   outline: none;
   border: none;
+  border-right: 1px solid #B5B5B5;
   appearance: none;
   padding: 5px;
   font-size: inherit;
@@ -86,7 +88,7 @@ const PlayerSearchForm = () => {
         <option value="jp1">JP</option>
         <option value="oc1">OC</option>
       </StyledSelector>
-      <StyledInput name="search" />
+      <StyledInput name="search" placeholder="Search parameters are case sensitive" />
       <StyledButton>Search</StyledButton>
     </StyledForm>
   )

@@ -17,7 +17,7 @@ const StyledSearch = styled.div`
   width: 130px;
   height: 130px;
   animation: ${spin} 2s linear infinite;
-  margin-top: 15vh;
+  margin: 10px auto 10px auto;
 `
 
 const SearchAnimation = () => {

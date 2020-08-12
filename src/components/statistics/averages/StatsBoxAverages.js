@@ -3,21 +3,16 @@ import styled from 'styled-components'
 import { useSelector } from 'react-redux'
 import SingleStat from './SingleStat'
 import SearchAnimation from '../../SearchAnimation'
+import H3 from '../../H3'
 
 const StyledBoxContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: start;
   align-items: center;
-  width: 20vw;
-  min-width: 250px;
+  justify-content: flex-start;
   background: #344164;
-
-  border-radius: 14px; 
-`
-
-const StyledLabel = styled.h3`
-  padding-bottom: 10px;
+  margin: 5px;
+  border-radius: 5px; 
 `
 
 const StatsBoxAverages = () => {
@@ -87,7 +82,7 @@ const StatsBoxAverages = () => {
 
   return (
     <StyledBoxContainer>
-      <StyledLabel>Averages per game</StyledLabel>
+      <H3>Averages per game</H3>
       {generateStatParagraphs()}
     </StyledBoxContainer>
   )

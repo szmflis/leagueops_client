@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import styled from 'styled-components'
 import StatsBoxAverages from './averages/StatsBoxAverages'
 import TraitsBox from './player_traits/TraitsBox'
+import PlayerInfo from './player_info/PlayerInfo'
 
 const StyledContainer = styled.div`
   display: ${({ isSearch }) => isSearch ? 'none' : 'flex'};
@@ -20,13 +21,23 @@ const StyledStatsContainer = styled.div`
   height: 60vh;
 `
 
+const StyledAvgPlrTraitsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 17vw;
+  min-width: 250px;
+`
+
 const PlayerStatistics = () => {
   const search = useSelector(state => state.search)
 
   return (
     <StyledContainer isSearch={search === undefined || search.length === 0}>
       <StyledStatsContainer>
-        <StatsBoxAverages />
+        <StyledAvgPlrTraitsContainer>
+          <PlayerInfo />
+          <StatsBoxAverages />
+        </StyledAvgPlrTraitsContainer>
       </StyledStatsContainer>
     </StyledContainer>
   )
