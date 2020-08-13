@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import StatsBoxAverages from './averages/StatsBoxAverages'
 import TraitsBox from './player_traits/TraitsBox'
 import PlayerInfo from './player_info/PlayerInfo'
+import TopMasteries from './masteries/TopMasteries'
 
 const StyledContainer = styled.div`
   display: ${({ isSearch }) => isSearch ? 'none' : 'flex'};
@@ -24,8 +25,15 @@ const StyledStatsContainer = styled.div`
 const StyledAvgPlrTraitsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 17vw;
+  width: 20vw;
   min-width: 250px;
+`
+
+const StyledMasteriesHistoryContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  min-width: 500px;
 `
 
 const PlayerStatistics = () => {
@@ -38,6 +46,9 @@ const PlayerStatistics = () => {
           <PlayerInfo />
           <StatsBoxAverages />
         </StyledAvgPlrTraitsContainer>
+        <StyledMasteriesHistoryContainer>
+          <TopMasteries />
+        </StyledMasteriesHistoryContainer>
       </StyledStatsContainer>
     </StyledContainer>
   )

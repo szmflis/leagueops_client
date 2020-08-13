@@ -5,7 +5,7 @@ const P = styled.p`
   margin: ${({ margin }) => margin || '0px'};
   margin-bottom: ${({ marginBottom }) => marginBottom || '0px'};
   font-size: ${({ size }) => size || '0.75em'};
-  font-weight: ${({ weight }) => weight || '600'};
+  font-weight: ${({ weight }) => weight || 'normal'};
   opacity: ${({ opacity }) => opacity || 1};
 `
 
