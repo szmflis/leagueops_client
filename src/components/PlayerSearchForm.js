@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useSelector, useDispatch } from 'react-redux'
-import { setPlayerStats } from '../reducers/playerReducer'
-import { setSearchParams } from '../reducers/searchReducer'
+import { setPlayerStats, resetPlayerStats } from '../reducers/playerReducer'
+import { setSearchParams, resetSearchParams } from '../reducers/searchReducer'
+import { resetNotification } from '../reducers/notificationReducer'
 
 const StyledForm = styled.form`
   height: ${({ isSearch }) => isSearch ? '100vh' : '20vh'};
@@ -61,7 +62,6 @@ const StyledSelector = styled.select`
 
 const PlayerSearchForm = () => {
   const search = useSelector(state => state.search)
-
   const dispatch = useDispatch()
 
   const searchHandler = async (event) => {
@@ -69,6 +69,10 @@ const PlayerSearchForm = () => {
 
     const searchParam = event.target.search.value
     const regionParam = event.target.region.value
+
+    dispatch(resetNotification())
+    dispatch(resetSearchParams())
+    dispatch(resetPlayerStats())
 
     dispatch(setSearchParams(searchParam, regionParam))
     dispatch(setPlayerStats(searchParam, regionParam))
@@ -88,7 +92,11 @@ const PlayerSearchForm = () => {
         <option value="jp1">JP</option>
         <option value="oc1">OC</option>
       </StyledSelector>
-      <StyledInput name="search" placeholder="Search parameters are case sensitive" />
+      <StyledInput
+        name="search"
+        placeholder="Search parameters are case sensitive"
+        required="true"
+      />
       <StyledButton>Search</StyledButton>
     </StyledForm>
   )

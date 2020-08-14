@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux'
 import emblemArray from '../../../utils/emblems'
 import { CHMP_INFO_URL } from '../../../utils/urls'
 import Mastery from './Mastery'
+import SearchAnimation from '../../SearchAnimation'
 
 const StyledMasteriesContainer = styled.div`
   display: grid;
@@ -54,7 +55,9 @@ const TopMasteries = () => {
 
   return (
     <StyledMasteriesContainer>
-      {playerMasteries === undefined ? <div></div> : renderMasteries()}
+      {playerMasteries === undefined
+        ? <SearchAnimation gridColumn="2/3"></SearchAnimation>
+        : renderMasteries()}
     </StyledMasteriesContainer>
   )
 }

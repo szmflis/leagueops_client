@@ -2,7 +2,6 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import styled from 'styled-components'
 import StatsBoxAverages from './averages/StatsBoxAverages'
-import TraitsBox from './player_traits/TraitsBox'
 import PlayerInfo from './player_info/PlayerInfo'
 import TopMasteries from './masteries/TopMasteries'
 

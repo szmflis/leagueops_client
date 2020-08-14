@@ -1,3 +1,10 @@
+export const resetSearchParams = () => {
+  return {
+    type: 'SET_SEARCH_PARAMS',
+    data: [],
+  }
+}
+
 export const setSearchParams = (nickname, region) => {
   return {
     type: 'SET_SEARCH_PARAMS',
@@ -9,7 +16,6 @@ export const setSearchParams = (nickname, region) => {
 }
 
 const reducer = (state = [], action) => {
-  console.log('In searchReducer ====> ', state, action)
   switch (action.type) {
     case 'SET_SEARCH_PARAMS': {
       return action.data

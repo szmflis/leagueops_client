@@ -1,8 +1,10 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components'
+import { useSelector } from 'react-redux'
 import Navbar from './components/Navbar'
 import PlayerSearchForm from './components/PlayerSearchForm'
 import PlayerStatistics from './components/statistics/PlayerStatistics'
+import Notification from './components/Notification'
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -27,13 +29,16 @@ const StyledWrapper = styled.div`
 `
 
 const App = () => {
+  const notification = useSelector(state => state.notification)
   return (
     <>
       <GlobalStyle />
       <StyledWrapper>
         <Navbar />
         <PlayerSearchForm />
-        <PlayerStatistics />
+        {notification === null
+          ? <PlayerStatistics />
+          : <Notification />}
       </StyledWrapper>
     </>
   )

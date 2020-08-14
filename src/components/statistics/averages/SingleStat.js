@@ -1,22 +1,17 @@
 import React from 'react'
-import styled from 'styled-components'
 import PropTypes from 'prop-types'
+import P from '../../P'
 
-const StyledStatistic = styled.p`
-  color:${({ parColor }) => parColor || 'white'};
-  
-`
-const SingleStat = ({ info, color, statName }) => {
+const SingleStat = ({ info, statName }) => {
   return (
-    <StyledStatistic parColor={color}>
+    <P weigh="bold" size="1em" marginBottom="2px">
       {statName} {info}
-    </StyledStatistic>
+    </P>
   )
 }
 
 SingleStat.propTypes = {
   info: PropTypes.string.isRequired,
-  color: PropTypes.string.isRequired,
   statName: PropTypes.string.isRequired,
 }
 

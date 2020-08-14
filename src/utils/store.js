@@ -2,14 +2,14 @@ import { createStore, combineReducers, applyMiddleware } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import thunk from 'redux-thunk'
 
-import championReducer from '../reducers/championReducer'
 import playerReducer from '../reducers/playerReducer'
 import searchReducer from '../reducers/searchReducer'
+import notificationReducer from '../reducers/notificationReducer'
 
 const reducer = combineReducers({
-  champions: championReducer,
   player: playerReducer,
   search: searchReducer,
+  notification: notificationReducer,
 })
 
 const store = createStore(

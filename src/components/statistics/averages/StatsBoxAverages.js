@@ -28,52 +28,43 @@ const StatsBoxAverages = () => {
       )
     }
 
-    console.log(playerData)
-
     const kills = (playerData.kills / playerData.games).toFixed(1)
     const assists = (playerData.assists / playerData.games).toFixed(1)
     const deaths = (playerData.deaths / playerData.games).toFixed(1)
     return (
       // Change
       <>
+        <H3 paddingBottom="5px">Averages per game</H3>
         <SingleStat
           info={`${kills} / ${deaths} / ${assists}`}
-          color="#FF0000"
           statName="KDA "
         />
         <SingleStat
           info={`${(playerData.gold / playerData.games).toFixed(0)}`}
-          color="#42FF00"
           statName="Gold "
         />
         <SingleStat
           info={`${((playerData.wins / playerData.games) * 100).toFixed(0)} %`}
-          color="#FFE600"
           statName="Winrate "
         />
         <SingleStat
           info={`${(playerData.ccTime / playerData.games).toFixed(0)} seconds`}
-          color="#42FF00"
           statName="CCtime "
         />
         <SingleStat
           info={`${(playerData.dmg / playerData.games).toFixed(0)}`}
-          color="#FF0000"
           statName="DMG "
         />
         <SingleStat
           info={`${(playerData.objDmg / playerData.games).toFixed(0)}`}
-          color="#42FF00"
           statName="Objective DMG  "
         />
         <SingleStat
           info={`${(playerData.cs / playerData.games).toFixed(0)}`}
-          color="#42FF00"
           statName="CS  "
         />
         <SingleStat
           info={`${(playerData.towerKills / playerData.games).toFixed(0)}`}
-          color="#42FF00"
           statName="Tower kills  "
         />
       </>
@@ -82,7 +73,6 @@ const StatsBoxAverages = () => {
 
   return (
     <StyledBoxContainer>
-      <H3>Averages per game</H3>
       {generateStatParagraphs()}
     </StyledBoxContainer>
   )
