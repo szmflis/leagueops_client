@@ -56,7 +56,7 @@ const TopMasteries = () => {
   return (
     <StyledMasteriesContainer>
       {playerMasteries === undefined
-        ? <SearchAnimation gridColumn="2/3"></SearchAnimation>
+        ? <SearchAnimation></SearchAnimation>
         : renderMasteries()}
     </StyledMasteriesContainer>
   )

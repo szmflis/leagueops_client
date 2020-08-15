@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import StatsBoxAverages from './averages/StatsBoxAverages'
 import PlayerInfo from './player_info/PlayerInfo'
 import TopMasteries from './masteries/TopMasteries'
+import MatchHistory from './match_history/MatchHistory'
 
 const StyledContainer = styled.div`
   display: ${({ isSearch }) => isSearch ? 'none' : 'flex'};
@@ -47,6 +48,7 @@ const PlayerStatistics = () => {
         </StyledAvgPlrTraitsContainer>
         <StyledMasteriesHistoryContainer>
           <TopMasteries />
+          <MatchHistory />
         </StyledMasteriesHistoryContainer>
       </StyledStatsContainer>
     </StyledContainer>
