@@ -29,7 +29,7 @@ const StyledInput = styled.input`
 
 const StyledButton = styled.button`
   border: none;
-  background: #40507B;
+  background: #0A1421;
   border-radius: 0px 10px 10px 0px;
   width: 12vw;
   max-width: 100px;

@@ -5,18 +5,17 @@ import SearchAnimation from '../../SearchAnimation'
 import Match from './Match'
 
 const StyledMatchContainer = styled.div`
-  background: #344164;
+  background: #38424E;
   margin: 5px;
   border-radius: 5px;
 `
 
 const MatchHistory = () => {
   const matchHistory = useSelector(state => state.player.history)
-  const currentPlayer = useSelector(state => state.player)
 
   const renderMatches = () => {
     const mappedMatches = matchHistory.map(match => {
-      return <Match data={match} />
+      return <Match match={match} key={match.gameId} />
     })
     return mappedMatches
   }

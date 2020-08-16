@@ -7,11 +7,20 @@ import PlayerStatistics from './components/statistics/PlayerStatistics'
 import Notification from './components/Notification'
 
 const GlobalStyle = createGlobalStyle`
-  body {
+  html, body{
     padding: 0;
     margin: 0;
+  }
+
+  html{
+    height: 100%;
+  }
+
+  body {
     font-family: 'Montserrat';
     color: #ffffff;
+    background: #1F2833;
+    min-height: 100%;
   }
 
   *, *:: before, *::after {

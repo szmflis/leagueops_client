@@ -7,6 +7,7 @@ const P = styled.p`
   font-size: ${({ size }) => size || '0.75em'};
   font-weight: ${({ weight }) => weight || 'normal'};
   opacity: ${({ opacity }) => opacity || 1};
+  grid-column: ${({ column }) => column || '1/2'}
 `
 
 export default P

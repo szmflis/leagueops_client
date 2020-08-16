@@ -7,7 +7,7 @@ import P from '../../P'
 
 const StyledBoxContainer = styled.div`
   display: flex;
-  background: #344164;
+  background: #38424E;
   margin: 5px;
   border-radius: 5px;
 `
@@ -25,7 +25,7 @@ const StyledImg = styled.img`
 `
 
 const PlayerInfo = () => {
-  const playerData = useSelector(state => state.player.player)
+  const playerData = useSelector(state => state.player.playerInfo)
   const playerRankedData = useSelector(state => state.player.leagues)
 
   const singleLeagueInfoRender = (index) => {
