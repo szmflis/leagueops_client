@@ -1,4 +1,18 @@
 import runes from '../assets/runesReforged.json'
+import summonerSpellData from '../assets/summonerSpells.json'
+import championData from '../assets/champion.json'
+
+export const getSummSpellById = (summSpellId) => {
+  const summSpellArr = Object.values(summonerSpellData.data)
+  const championObj = summSpellArr.find(spell => Number(spell.key) === summSpellId)
+  return championObj
+}
+
+export const getChmpDataById = (championId) => {
+  const championArr = Object.values(championData.data)
+  const championObj = championArr.find(champion => Number(champion.key) === championId)
+  return championObj
+}
 
 export const getPerkImg = (id) => {
   let url = ''
@@ -14,7 +28,6 @@ export const getPerkImg = (id) => {
       }
     })
   })
-  console.log(`/assets/${url}`)
   const image = require(`../assets/${url}`)
   return image
 }

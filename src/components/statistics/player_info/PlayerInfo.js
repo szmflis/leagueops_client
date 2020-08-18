@@ -7,7 +7,7 @@ import P from '../../P'
 
 const StyledBoxContainer = styled.div`
   display: flex;
-  background: #38424E;
+  background: ${({ theme }) => theme.colors.bright};
   margin: 5px;
   border-radius: 5px;
 `
@@ -32,9 +32,15 @@ const PlayerInfo = () => {
     const league = playerRankedData[index]
     return (
       <>
-        <P>{league.queueType.replace(/_/g, ' ')} {league.tier} {league.rank}</P>
-        <P opacity="0.5">{league.wins} / {league.losses} {league.leaguePoints} LP</P>
-        <P opacity="0.5" marginBottom="3px">{((league.wins / (league.wins + league.losses)) * 100).toFixed(1)} % Winrate</P>
+        <P weight="600" opacity="0.9">
+          {league.queueType.replace(/_/g, ' ')} {league.tier} {league.rank}
+        </P>
+        <P opacity="0.7">
+          {league.wins} / {league.losses} {league.leaguePoints} LP
+        </P>
+        <P opacity="0.7" marginBottom="3px">
+          {((league.wins / (league.wins + league.losses)) * 100).toFixed(1)} % Winrate
+        </P>
       </>
     )
   }
@@ -66,7 +72,13 @@ const PlayerInfo = () => {
           alt="Profile Icon"
         />
         <StyledInfoContainer>
-          <P size="1.125em" marginBottom="2px">{playerData.name} {playerData.summonerLevel}</P>
+          <P
+            size="1.125em"
+            marginBottom="2px"
+            weight="600"
+          >
+            {playerData.name} {playerData.summonerLevel}
+          </P>
           {rankedInfoRender()}
         </StyledInfoContainer>
       </>

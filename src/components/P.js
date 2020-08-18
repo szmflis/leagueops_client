@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 
 const P = styled.p`
-  color: ${({ color }) => color || 'white'};
+  font-size: ${({ size, theme }) => size || theme.fontSize.small};
+  font-weight: ${({ weight, theme }) => weight || theme.fontWeight.regular};
+  color: ${({ color, theme }) => color || theme.colors.white};
   margin: ${({ margin }) => margin || '0px'};
   margin-bottom: ${({ marginBottom }) => marginBottom || '0px'};
-  font-size: ${({ size }) => size || '0.75em'};
-  font-weight: ${({ weight }) => weight || 'normal'};
   opacity: ${({ opacity }) => opacity || 1};
   grid-column: ${({ column }) => column || '1/2'}
 `

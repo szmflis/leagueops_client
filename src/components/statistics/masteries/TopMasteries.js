@@ -4,15 +4,14 @@ import { useSelector } from 'react-redux'
 import emblemArray from '../../../utils/emblems'
 import Mastery from './Mastery'
 import SearchAnimation from '../../SearchAnimation'
-
-import { getChmpDataById } from '../../../utils/championsData'
+import { getChmpDataById } from '../../../utils/dataExtractHelper'
 
 const StyledMasteriesContainer = styled.div`
   display: grid;
   grid-template-columns: 33% 34% 33%;
   grid-template-rows: 100%;
   margin: 5px;
-  background: #38424E;
+  background: ${({ theme }) => theme.colors.bright};
   border-radius: 5px;
 `
 

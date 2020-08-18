@@ -1,59 +1,66 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useSelector, useDispatch } from 'react-redux'
+import { MdSearch } from 'react-icons/md'
 import { setPlayerStats, resetPlayerStats } from '../reducers/playerReducer'
 import { setSearchParams, resetSearchParams } from '../reducers/searchReducer'
 import { resetNotification } from '../reducers/notificationReducer'
 
 const StyledForm = styled.form`
-  height: ${({ isSearch }) => isSearch ? '100vh' : '20vh'};
-  width: 100vw;
-  background: #1F2833;
   display:flex;
   justify-content: center;
   align-items: center;
+  width: 100vw;
+  height: ${({ isSearch }) => isSearch ? '100vh' : '20vh'};
+  background: ${({ theme }) => theme.colors.background};
 `
 
 const StyledInput = styled.input`
   width: 40vw;
-  height: 6vh;
-  border:none;
-  background: #ffffff;
-
-  font-size: 1.5em;
+  height: 5vh;
+  min-height: 50px;
+  background: ${({ theme }) => theme.colors.white};
+  font-size: ${({ theme }) => theme.fontSize.huge};
   padding: 5px;
+  border:none;
   :focus{
     outline: none;
   }
 `
 
 const StyledButton = styled.button`
-  border: none;
-  background: #0A1421;
-  border-radius: 0px 10px 10px 0px;
   width: 12vw;
   max-width: 100px;
-  height: 6vh;
-  font-size: 1.2em;
-  color: #ffffff;
+  height: 5vh;
+  min-height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
   outline: none;
+  border-radius: 0px 10px 10px 0px;
+  background: ${({ theme }) => theme.colors.darkest};
+  font-size: ${({ theme }) => theme.fontSize.bigger};
+  font-weight: ${({ theme }) => theme.fontWeight.bold};
+  color: ${({ theme }) => theme.colors.white};
+`
 
-  :hover{
-    transition: 0.2s;
-    background: #CE0000;
-  }
-
-  :active{
-    background: white;
-  }
+const StyledSearchIcon = styled(MdSearch)`
+  width: 9vw;
+  min-width: 50px;
+  height: 4vh;
+  min-height: 40px;
 `
 
 const StyledSelector = styled.select`
   width: 4vw;
-  height: 6vh;
-  background-color: white;
+  min-width: 50px;
+  height: 5vh;
+  min-height: 50px;
+  background-color: ${({ theme }) => theme.colors.white};
   outline: none;
   border: none;
+  border-radius: 5px 0px 0px 5px;
   border-right: 1px solid #B5B5B5;
   appearance: none;
   padding: 5px;
@@ -86,7 +93,7 @@ const PlayerSearchForm = () => {
       <StyledSelector name="region">
         <option value="na1">NA</option>
         <option value="euw1">EUW</option>
-        <option value="eun1">EUNE</option>
+        <option value="eun1">EUN</option>
         <option value="ru">RU</option>
         <option value="br1">BR</option>
         <option value="jp1">JP</option>
@@ -97,7 +104,7 @@ const PlayerSearchForm = () => {
         placeholder="Search parameters are case sensitive"
         required="true"
       />
-      <StyledButton>Search</StyledButton>
+      <StyledButton><StyledSearchIcon /></StyledButton>
     </StyledForm>
   )
 }

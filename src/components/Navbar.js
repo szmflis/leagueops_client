@@ -5,8 +5,9 @@ const StyledNavbar = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #0A1421;
+    background: ${({ theme }) => theme.colors.darkest};
     height: 5vh;
+    min-height: 50px;
     width: 100vw;
 `
 

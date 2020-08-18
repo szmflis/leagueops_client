@@ -25,15 +25,17 @@ const StyledEmblem = styled.img`
   opacity: 0.8;
 `
 
-const Mastery = ({ name, title, emblem, level, mstrPoints }) => {
+const Mastery = ({
+  name, title, emblem, level, mstrPoints
+}) => {
   return (
     <StyledMasteryContainer bckgroundName={name}>
       <StyledContentWrapper>
         <P color="black" weight="800" size="1em" margin="1px">{name}</P>
-        <P color="black" margin="1px" opacity="0.9">{title}</P>
+        <P color="black" weight="600" margin="1px" opacity="0.8">{title}</P>
         <StyledEmblem src={emblem} alt="mastery emblem" />
-        <P color="black" margin="1px" opacity="0.9">Level {level}</P>
-        <P color="black" margin="1px" weight="800">{mstrPoints} PTS</P>
+        <P color="black" margin="1px" opacity="0.9" size="1em">Level {level}</P>
+        <P color="black" margin="1px" weight="800" size="1em">{mstrPoints} PTS</P>
       </StyledContentWrapper>
     </StyledMasteryContainer>
   )
