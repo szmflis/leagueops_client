@@ -8,7 +8,8 @@ import { getChmpDataById } from '../../../../utils/dataExtractHelper'
 const StyledPlayersContainer = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 100px;
+  max-width: 90px;
+  padding: 10px;
 `
 
 const StyledPlayerContainer = styled.div`
@@ -25,7 +26,9 @@ const PlayersList = ({ players }) => {
             src={`${CHMP_IMG_SQUARE}/${championId}.png`}
             size="20px"
           />
-          <P>{player.identity.player.summonerName}</P>
+          <P nowrap>
+            {player.identity.player.summonerName}
+          </P>
         </StyledPlayerContainer>
       )
     })

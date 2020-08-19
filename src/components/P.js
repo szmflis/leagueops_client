@@ -7,7 +7,10 @@ const P = styled.p`
   margin: ${({ margin }) => margin || '0px'};
   margin-bottom: ${({ marginBottom }) => marginBottom || '0px'};
   opacity: ${({ opacity }) => opacity || 1};
-  grid-column: ${({ column }) => column || '1/2'}
+  grid-column: ${({ column }) => column || '1/2'};
+  text-overflow: ${({ nowrap }) => nowrap ? 'ellipsis' : ''};
+  white-space: ${({ nowrap }) => nowrap ? 'nowrap' : ''};
+  overflow: ${({ nowrap }) => nowrap ? 'hidden' : ''};
 `
 
 export default P

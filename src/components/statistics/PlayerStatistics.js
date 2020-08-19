@@ -11,7 +11,7 @@ const StyledContainer = styled.div`
   visibility: ${({ isSearch }) => isSearch ? 'hidden' : 'visible'};
   height: 80vh;
   width: 100vw;
-  background: #1F2833;
+  background: ${({ theme }) => theme.colors.background};
   justify-content: center;
 `
 
@@ -33,7 +33,7 @@ const StyledMasteriesHistoryContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 50vw;
-  min-width: 500px;
+  min-width: 800px;
 `
 
 const PlayerStatistics = () => {
