@@ -28,6 +28,7 @@ const TopMasteries = () => {
           emblem={emblemArray[mastery.championLevel - 1]}
           level={mastery.championLevel}
           mstrPoints={mastery.championPoints}
+          id={getChmpDataById(mastery.championId).id}
         />
       )
     })

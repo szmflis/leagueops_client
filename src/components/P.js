@@ -11,6 +11,12 @@ const P = styled.p`
   text-overflow: ${({ nowrap }) => nowrap ? 'ellipsis' : ''};
   white-space: ${({ nowrap }) => nowrap ? 'nowrap' : ''};
   overflow: ${({ nowrap }) => nowrap ? 'hidden' : ''};
+  &:hover {
+    overflow: ${({ hover }) => hover ? 'visible' : 'hidden'};
+    z-index: ${({ hover }) => hover ? '1000' : ''};
+    background-color: ${({ hover }) => hover ? 'rgba(0, 0, 0, 0.5)' : ''};
+    font-weight: ${({ hover }) => hover ? '600' : ''}
+  }
 `
 
 export default P

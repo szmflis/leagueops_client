@@ -44,7 +44,7 @@ const TimeWinContainer = ({
         {`${getTimeDiff(gameCreationTime, new Date().getTime())}`} ago
       </P>
       <hr></hr>
-      <P color={winCondition ? 'blue' : 'red'} size="1em" weight="bold" marginBottom="3px">
+      <P color={winCondition ? '#696DFF' : 'red'} size="1em" weight="bold" marginBottom="3px">
         {winCondition ? 'Win' : 'Loss'}
       </P>
       <P size="0.875em" opacity="0.8">

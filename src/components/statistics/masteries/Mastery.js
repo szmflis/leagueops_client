@@ -26,10 +26,10 @@ const StyledEmblem = styled.img`
 `
 
 const Mastery = ({
-  name, title, emblem, level, mstrPoints
+  name, title, emblem, level, mstrPoints, id
 }) => {
   return (
-    <StyledMasteryContainer bckgroundName={name}>
+    <StyledMasteryContainer bckgroundName={id}>
       <StyledContentWrapper>
         <P color="black" weight="800" size="1em" margin="1px">{name}</P>
         <P color="black" weight="600" margin="1px" opacity="0.8">{title}</P>
