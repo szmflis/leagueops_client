@@ -7,11 +7,11 @@ import {
 } from '../../../utils/dataExtractHelper'
 
 import ChmpRunesGrid from './match_components/ChmpRunesGrid'
-import ItemsGrid from './match_components/ItemsGrid'
+import ItemsGrid from './match_components/items/ItemsGrid'
 import LvlCsCcContainer from './match_components/LvlCsCcContainer'
 import TimeWinContainer from './match_components/TimeWinContainer'
 import KdaContainer from './match_components/KdaContainer'
-import PlayersList from './match_components/PlayersList'
+import PlayersList from './match_components/playerlist/PlayersList'
 
 const StyledMatchContainer = styled.div`
   display: flex;

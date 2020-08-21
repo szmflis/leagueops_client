@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { getChmpDataById } from '../../../../utils/dataExtractHelper'
+import { getChmpDataById } from '../../../../../utils/dataExtractHelper'
 import Player from './Player'
 
 const StyledPlayersContainer = styled.div`
@@ -18,6 +18,7 @@ const PlayersList = ({ players }) => {
           summonerName={player.identity.player.summonerName}
           championId={getChmpDataById(player.championId).id}
           key={player.identity.player.summonerName}
+          playerData={player}
         />)
       }
     </StyledPlayersContainer>

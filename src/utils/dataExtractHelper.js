@@ -1,6 +1,7 @@
 import runes from '../assets/runesReforged.json'
 import summonerSpellData from '../assets/summonerSpells.json'
 import championData from '../assets/champion.json'
+import itemsData from '../assets/item.json'
 
 export const getSummSpellById = (summSpellId) => {
   const summSpellArr = Object.values(summonerSpellData.data)
@@ -36,4 +37,10 @@ export const getMainPerkImg = (id) => {
   const url = runes.find(rune => rune.id === id).icon
   const image = require(`../assets/${url}`)
   return image
+}
+
+export const getItemData = (id) => {
+  const items = Object.values(itemsData)
+  const searchedItem = items.find(item => Number(item.image.full.slice(0, 4)) === id)
+  return searchedItem
 }

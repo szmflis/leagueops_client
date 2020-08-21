@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import {
   ITEM_IMG_URL,
   EMPTY_IMG_URL
-} from '../../../../utils/urls'
-import StyledImg from './StyledImg'
+} from '../../../../../utils/urls'
+import Item from './Item'
 
 const StyledItemsContainer = styled.div`
   display: grid;
@@ -18,8 +18,15 @@ const ItemsGrid = ({ items }) => {
       {items.map(item => item !== 0
         // Player can have multiple items of the same id, and item object doesnt have any other
         // Property to use as key - hence Math.random hack
-        ? <StyledImg src={`${ITEM_IMG_URL}/${item}.png`} key={`${item}-${Math.floor(Math.random() * 99)}`} radius="6px" />
-        : <StyledImg src={EMPTY_IMG_URL} key={`${item}-${Math.floor(Math.random() * 99)}`} />)}
+        ? <Item
+          url={`${ITEM_IMG_URL}/${item}.png`}
+          key={`${item}-${Math.floor(Math.random() * 99)}`}
+          id={item}
+        />
+        : <Item
+          url={EMPTY_IMG_URL}
+          key={`${item}-${Math.floor(Math.random() * 99)}`}
+        />)}
     </StyledItemsContainer>
   )
 }
