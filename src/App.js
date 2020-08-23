@@ -5,6 +5,7 @@ import PlayerSearchForm from './components/PlayerSearchForm'
 import PlayerStatistics from './components/statistics/PlayerStatistics'
 import Notification from './components/Notification'
 import Layout from './layout/Layout'
+import FreeRotation from './components/FreeRotation'
 
 const App = () => {
   const notification = useSelector(state => state.notification)
@@ -16,6 +17,7 @@ const App = () => {
       {notification === null
         ? <PlayerStatistics />
         : <Notification />}
+      <FreeRotation />
     </Layout>
   )
 }

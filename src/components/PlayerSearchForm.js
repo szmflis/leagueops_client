@@ -1,18 +1,25 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { useSelector, useDispatch } from 'react-redux'
 import { MdSearch } from 'react-icons/md'
+import { fadeInDown } from 'react-animations'
 import { setPlayerStats, resetPlayerStats } from '../reducers/playerReducer'
 import { setSearchParams, resetSearchParams } from '../reducers/searchReducer'
 import { resetNotification } from '../reducers/notificationReducer'
 
+const StyledWrapper = styled.div`
+  height: ${({ isSearch }) => isSearch ? '100vh' : '20vh'};
+  background: ${({ theme }) => theme.colors.background};
+  display: flex;
+  align-items: center;
+`
+
+const bounceAnimation = keyframes`${fadeInDown}`
+
 const StyledForm = styled.form`
   display:flex;
   justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: ${({ isSearch }) => isSearch ? '100vh' : '20vh'};
-  background: ${({ theme }) => theme.colors.background};
+  animation: 1s ${bounceAnimation}
 `
 
 const StyledInput = styled.input`
@@ -86,26 +93,27 @@ const PlayerSearchForm = () => {
   }
 
   return (
-    <StyledForm
-      onSubmit={searchHandler}
-      isSearch={search === undefined || search.length === 0}
-    >
-      <StyledSelector name="region">
-        <option value="na1">NA</option>
-        <option value="euw1">EUW</option>
-        <option value="eun1">EUN</option>
-        <option value="ru">RU</option>
-        <option value="br1">BR</option>
-        <option value="jp1">JP</option>
-        <option value="oc1">OC</option>
-      </StyledSelector>
-      <StyledInput
-        name="search"
-        placeholder="Select player name and region (case sensitive)"
-        required="true"
-      />
-      <StyledButton><StyledSearchIcon /></StyledButton>
-    </StyledForm>
+    <StyledWrapper isSearch={search === undefined || search.length === 0}>
+      <StyledForm
+        onSubmit={searchHandler}
+      >
+        <StyledSelector name="region">
+          <option value="na1">NA</option>
+          <option value="euw1">EUW</option>
+          <option value="eun1">EUN</option>
+          <option value="ru">RU</option>
+          <option value="br1">BR</option>
+          <option value="jp1">JP</option>
+          <option value="oc1">OC</option>
+        </StyledSelector>
+        <StyledInput
+          name="search"
+          placeholder="Select player name and region (case sensitive)"
+          required="true"
+        />
+        <StyledButton><StyledSearchIcon /></StyledButton>
+      </StyledForm>
+    </StyledWrapper>
   )
 }
 
