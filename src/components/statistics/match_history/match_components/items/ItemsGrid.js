@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 import {
   ITEM_IMG_URL,
   EMPTY_IMG_URL
@@ -29,6 +30,10 @@ const ItemsGrid = ({ items }) => {
         />)}
     </StyledItemsContainer>
   )
+}
+
+ItemsGrid.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.number).isRequired
 }
 
 export default ItemsGrid

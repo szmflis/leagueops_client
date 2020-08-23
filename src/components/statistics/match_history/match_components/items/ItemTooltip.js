@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import P from '../../../../P'
 
 const ItemTooltip = ({ data }) => {
@@ -26,6 +27,14 @@ const ItemTooltip = ({ data }) => {
 
     </>
   )
+}
+
+ItemTooltip.propTypes = {
+  data: PropTypes.shape({
+    name: PropTypes.string,
+    plaintext: PropTypes.string,
+    description: PropTypes.string,
+  }).isRequired
 }
 
 export default ItemTooltip

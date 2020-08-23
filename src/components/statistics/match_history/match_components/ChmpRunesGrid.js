@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 import {
   CHMP_IMG_SQUARE,
   SUMM_SPELL_URL
@@ -67,6 +68,15 @@ const ChmpRunesGrid = ({
       </P>
     </StyledImgGridContainer>
   )
+}
+
+ChmpRunesGrid.propTypes = {
+  championId: PropTypes.string.isRequired,
+  perk0: PropTypes.number.isRequired,
+  perkSubStyle: PropTypes.number.isRequired,
+  sumSpelldId: PropTypes.string.isRequired,
+  sumSpellfId: PropTypes.string.isRequired,
+  championName: PropTypes.string.isRequired,
 }
 
 export default ChmpRunesGrid

@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 import {
   getChmpDataById,
   getSummSpellById
@@ -24,6 +25,7 @@ const Match = ({ match }) => {
   const playerInfo = useSelector(state => state.player.playerInfo)
 
   const renderCurrentPlayerData = () => {
+    console.log(match)
     const currentPlayer = match.players.find(
       player => player.identity.player.summonerName === playerInfo.name
     )
@@ -74,6 +76,32 @@ const Match = ({ match }) => {
       {renderCurrentPlayerData()}
     </StyledMatchContainer>
   )
+}
+
+/*
+
+*/
+Match.propTypes = {
+  match: PropTypes.shape({
+    players: PropTypes.arrayOf(PropTypes.shape({
+      championId: PropTypes.number.isRequired,
+      spellfId: PropTypes.number.isRequired,
+      spelldId: PropTypes.number.isRequired,
+      win: PropTypes.bool.isRequired,
+      perk0: PropTypes.number.isRequired,
+      perkSubStyle: PropTypes.number.isRequired,
+      kills: PropTypes.number.isRequired,
+      deaths: PropTypes.number.isRequired,
+      assists: PropTypes.number.isRequired,
+      chmpLvl: PropTypes.number.isRequired,
+      cs: PropTypes.number.isRequired,
+      ccTime: PropTypes.number.isRequired,
+      damage_to_champions: PropTypes.shape({ total: PropTypes.number.isRequired }),
+      items: PropTypes.arrayOf(PropTypes.number).isRequired
+    })),
+    creation: PropTypes.number.isRequired,
+    duration: PropTypes.number.isRequired
+  }).isRequired
 }
 
 export default Match

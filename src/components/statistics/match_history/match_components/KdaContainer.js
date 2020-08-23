@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 import P from '../../../P'
 
 const StyledKdaContainer = styled.div`
@@ -10,7 +11,7 @@ const StyledKdaContainer = styled.div`
   padding-left: 15px;
 `
 
-const KdaContainer = ({ kills, deaths, assists}) => {
+const KdaContainer = ({ kills, deaths, assists }) => {
   return (
     <StyledKdaContainer>
       <P size="1.125em" weight="bold" marginBottom="5px">
@@ -21,6 +22,12 @@ const KdaContainer = ({ kills, deaths, assists}) => {
       </P>
     </StyledKdaContainer>
   )
+}
+
+KdaContainer.propTypes = {
+  kills: PropTypes.number.isRequired,
+  deaths: PropTypes.number.isRequired,
+  assists: PropTypes.number.isRequired,
 }
 
 export default KdaContainer

@@ -101,7 +101,7 @@ const PlayerSearchForm = () => {
       </StyledSelector>
       <StyledInput
         name="search"
-        placeholder="Search parameters are case sensitive"
+        placeholder="Select player name and region (case sensitive)"
         required="true"
       />
       <StyledButton><StyledSearchIcon /></StyledButton>

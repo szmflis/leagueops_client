@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 import P from '../../../P'
 
 const StyledLvlCsCcContainer = styled.div`
@@ -32,6 +33,14 @@ const LvlCsCcContainer = ({
       </P>
     </StyledLvlCsCcContainer>
   )
+}
+
+LvlCsCcContainer.propTypes = {
+  chmpLvl: PropTypes.number.isRequired,
+  cs: PropTypes.number.isRequired,
+  ccTime: PropTypes.number.isRequired,
+  totalDmgToChmps: PropTypes.number.isRequired,
+  gameDuration: PropTypes.number.isRequired,
 }
 
 export default LvlCsCcContainer

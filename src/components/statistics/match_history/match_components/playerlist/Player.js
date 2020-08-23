@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { useDispatch, useSelector } from 'react-redux'
 import ReactTooltip from 'react-tooltip'
+import PropTypes from 'prop-types'
 import P from '../../../../P'
 import StyledImg from '../StyledImg'
 import { CHMP_IMG_SQUARE } from '../../../../../utils/urls'
@@ -42,10 +43,48 @@ const Player = ({ summonerName, championId, playerData }) => {
         {summonerName}
       </P>
       <ReactTooltip id={summonerName}>
-        <PlayerTooltip data={playerData} />
+        <PlayerTooltip
+          data={playerData}
+        />
       </ReactTooltip>
     </StyledPlayerContainer>
   )
+}
+
+Player.propTypes = {
+  summonerName: PropTypes.string.isRequired,
+  championId: PropTypes.string.isRequired,
+  playerData: PropTypes.shape({
+    championId: PropTypes.number,
+    spellfId: PropTypes.number,
+    spelldId: PropTypes.number,
+    win: PropTypes.bool,
+    perk0: PropTypes.number,
+    perkSubStyle: PropTypes.number,
+    kills: PropTypes.number,
+    deaths: PropTypes.number,
+    assists: PropTypes.number,
+    chmpLvl: PropTypes.number,
+    cs: PropTypes.number,
+    ccTime: PropTypes.number,
+    damage_to_champions: PropTypes.shape({
+      total: PropTypes.number,
+      magic: PropTypes.number,
+      physical: PropTypes.number,
+      true: PropTypes.number
+    }),
+    damage_to_structures: PropTypes.shape({
+      objectives: PropTypes.number,
+      turrets: PropTypes.number,
+    }),
+    gold: PropTypes.number,
+    items: PropTypes.arrayOf(PropTypes.number),
+    identity: PropTypes.shape({
+      player: PropTypes.shape({
+        summonerName: PropTypes.string
+      })
+    })
+  }).isRequired
 }
 
 export default Player

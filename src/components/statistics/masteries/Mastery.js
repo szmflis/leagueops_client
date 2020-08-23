@@ -47,6 +47,7 @@ Mastery.propTypes = {
   emblem: PropTypes.string.isRequired,
   level: PropTypes.number.isRequired,
   mstrPoints: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired
 }
 
 export default Mastery

@@ -34,7 +34,6 @@
     "react/self-closing-comp":"off",
     "react/jsx-one-expression-per-line": "off",
     "comma-dangle":"off",
-    "react/prop-types":"off",
     "global-require":"off",
     "import/no-dynamic-require":"off",
     "no-shadow":"off",

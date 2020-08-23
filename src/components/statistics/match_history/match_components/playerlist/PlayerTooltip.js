@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 import P from '../../../../P'
 
 const StyledSpan = styled.span`
@@ -75,6 +76,40 @@ const PlayerTooltip = ({ data }) => {
       </P>
     </span>
   )
+}
+
+PlayerTooltip.propTypes = {
+  data: PropTypes.shape({
+    championId: PropTypes.number,
+    spellfId: PropTypes.number,
+    spelldId: PropTypes.number,
+    win: PropTypes.bool,
+    perk0: PropTypes.number,
+    perkSubStyle: PropTypes.number,
+    kills: PropTypes.number,
+    deaths: PropTypes.number,
+    assists: PropTypes.number,
+    chmpLvl: PropTypes.number,
+    cs: PropTypes.number,
+    ccTime: PropTypes.number,
+    damage_to_champions: PropTypes.shape({
+      total: PropTypes.number,
+      magic: PropTypes.number,
+      physical: PropTypes.number,
+      true: PropTypes.number
+    }),
+    damage_to_structures: PropTypes.shape({
+      objectives: PropTypes.number,
+      turrets: PropTypes.number,
+    }),
+    gold: PropTypes.number,
+    items: PropTypes.arrayOf(PropTypes.number),
+    identity: PropTypes.shape({
+      player: PropTypes.shape({
+        summonerName: PropTypes.string
+      })
+    })
+  }).isRequired
 }
 
 export default PlayerTooltip

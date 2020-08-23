@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 import P from '../../../P'
 
 const StyledTimeWinContainer = styled.div`
@@ -52,6 +53,12 @@ const TimeWinContainer = ({
       </P>
     </StyledTimeWinContainer>
   )
+}
+
+TimeWinContainer.propTypes = {
+  gameCreationTime: PropTypes.number.isRequired,
+  gameDurationTime: PropTypes.number.isRequired,
+  winCondition: PropTypes.bool.isRequired
 }
 
 export default TimeWinContainer
