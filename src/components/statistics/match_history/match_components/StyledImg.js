@@ -10,6 +10,7 @@ const StyledImg = styled.img`
   border-radius: ${({ radius }) => radius};
   grid-row: ${({ row }) => row};
   grid-column: ${({ column }) => column};
+  object-fit: ${({ fit }) => fit};
   flex-shrink: 0;
 `
 

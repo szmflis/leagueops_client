@@ -5,20 +5,23 @@ import SingleStat from './SingleStat'
 import SearchAnimation from '../../SearchAnimation'
 import H3 from '../../H3'
 
-const StyledBoxContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+const StyledWrapper = styled.div`
   background: ${({ theme }) => theme.colors.bright};
   margin: 5px;
   border-radius: 5px; 
 `
 
+const StyledAvgsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  animation: 1s ${({ theme }) => theme.animations.fadeIn}
+`
+
 const StatsBoxAverages = () => {
   // All matches and stats are to be kept inside the store's state
   // for use in later stages of the application
-
   const playerData = useSelector(state => state.player.combinedStats)
 
   const generateStatParagraphs = () => {
@@ -33,7 +36,7 @@ const StatsBoxAverages = () => {
     const deaths = (playerData.deaths / playerData.games).toFixed(1)
     return (
       // Change
-      <>
+      <StyledAvgsContainer>
         <H3 paddingBottom="5px">Averages per game</H3>
         <SingleStat
           info={`${kills} / ${deaths} / ${assists}`}
@@ -67,14 +70,14 @@ const StatsBoxAverages = () => {
           info={`${(playerData.towerKills / playerData.games).toFixed(0)}`}
           statName="Tower kills  "
         />
-      </>
+      </StyledAvgsContainer>
     )
   }
 
   return (
-    <StyledBoxContainer>
+    <StyledWrapper>
       {generateStatParagraphs()}
-    </StyledBoxContainer>
+    </StyledWrapper>
   )
 }
 

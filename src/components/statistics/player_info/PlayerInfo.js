@@ -4,24 +4,38 @@ import { useSelector } from 'react-redux'
 import SearchAnimation from '../../SearchAnimation'
 import { DD_PROFILE } from '../../../utils/urls'
 import P from '../../P'
+import StyledImg from '../match_history/match_components/StyledImg'
 
-const StyledBoxContainer = styled.div`
-  display: flex;
+const StyledWrapper = styled.div`
   background: ${({ theme }) => theme.colors.bright};
   margin: 5px;
   border-radius: 5px;
+`
+
+const StyledContenetContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  animation: 1s ${({ theme }) => theme.animations.fadeIn};
+`
+
+const StyledNameLvlContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+`
+
+const StyledImgNameContainer = styled.div`
+  display: flex;
+  background: ${({ theme }) => theme.colors.darkest};
+  align-items: center;
 `
 
 const StyledInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 6px 0px 0px 6px;
-`
-
-const StyledImg = styled.img`
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
 `
 
 const PlayerInfo = () => {
@@ -66,29 +80,35 @@ const PlayerInfo = () => {
     }
 
     return (
-      <>
-        <StyledImg
-          src={`${DD_PROFILE}/${playerData.profileIconId}.png`}
-          alt="Profile Icon"
-        />
+      <StyledContenetContainer>
+        <StyledImgNameContainer>
+          <StyledImg
+            src={`${DD_PROFILE}/${playerData.profileIconId}.png`}
+            alt="Profile Icon"
+            size="100px"
+            fit="cover"
+            radius="0px 0px 20px 0px"
+          />
+          <StyledNameLvlContainer>
+            <P size="1.125em" marginBottom="2px" weight="600">
+              {playerData.name}
+            </P>
+            <P size="1em">
+              Level {playerData.summonerLevel}
+            </P>
+          </StyledNameLvlContainer>
+        </StyledImgNameContainer>
         <StyledInfoContainer>
-          <P
-            size="1.125em"
-            marginBottom="2px"
-            weight="600"
-          >
-            {playerData.name} {playerData.summonerLevel}
-          </P>
           {rankedInfoRender()}
         </StyledInfoContainer>
-      </>
+      </StyledContenetContainer>
     )
   }
 
   return (
-    <StyledBoxContainer>
+    <StyledWrapper>
       {conditionalRender()}
-    </StyledBoxContainer>
+    </StyledWrapper>
   )
 }
 

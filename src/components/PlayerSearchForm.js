@@ -1,8 +1,7 @@
 import React from 'react'
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 import { useSelector, useDispatch } from 'react-redux'
 import { MdSearch } from 'react-icons/md'
-import { fadeInDown } from 'react-animations'
 import { setPlayerStats, resetPlayerStats } from '../reducers/playerReducer'
 import { setSearchParams, resetSearchParams } from '../reducers/searchReducer'
 import { resetNotification } from '../reducers/notificationReducer'
@@ -14,12 +13,10 @@ const StyledWrapper = styled.div`
   align-items: center;
 `
 
-const bounceAnimation = keyframes`${fadeInDown}`
-
 const StyledForm = styled.form`
   display:flex;
   justify-content: center;
-  animation: 1s ${bounceAnimation}
+  animation: 1s ${({ theme }) => theme.animations.fadeInDown}
 `
 
 const StyledInput = styled.input`

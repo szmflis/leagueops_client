@@ -18,7 +18,8 @@ const StyledMatchContainer = styled.div`
   display: flex;
   margin-bottom: 5px;
   align-items: center;
-  background: ${({ win }) => win ? '#2C546D' : '#6F2323'};
+  background: ${({ win, theme }) => win ? theme.colors.wonMatch : theme.colors.lostMatch};
+  animation: 1s ${({ theme }) => theme.animations.fadeIn}
 `
 
 const Match = ({ match }) => {

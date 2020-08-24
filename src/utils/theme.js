@@ -1,3 +1,9 @@
+import { keyframes } from 'styled-components'
+import { fadeIn, fadeInDown } from 'react-animations'
+
+const fadeInAnimation = keyframes`${fadeIn}`
+const fadeInDownAnimation = keyframes`${fadeInDown}`
+
 export const theme = {
   colors: {
     background: '#1F2833',
@@ -10,7 +16,9 @@ export const theme = {
     complamentaryDarkest: '#33240C',
     complamentaryDark: '#4E412D',
     complamentaryBright: '#776952',
-    complamentaryBrightest: '#A79579'
+    complamentaryBrightest: '#A79579',
+    wonMatch: '#2C546D',
+    lostMatch: '#6F2323'
   },
   fontWeight: {
     thin: 300,
@@ -23,5 +31,9 @@ export const theme = {
     big: '1em',
     bigger: '1.125em',
     huge: '1.5em'
+  },
+  animations: {
+    fadeIn: fadeInAnimation,
+    fadeInDown: fadeInDownAnimation
   }
 }

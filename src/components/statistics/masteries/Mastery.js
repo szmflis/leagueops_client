@@ -7,6 +7,7 @@ import P from '../../P'
 const StyledMasteryContainer = styled.div`
   background-image: ${({ bckgroundName }) => `url(${CHMP_SPLASH_URL}/${bckgroundName}_0.jpg)`};
   background-position: 50% 25%;
+  animation: 1s ${({ theme }) => theme.animations.fadeIn}
 `
 
 const StyledContentWrapper = styled.div`

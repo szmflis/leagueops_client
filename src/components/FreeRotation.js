@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 import { useSelector } from 'react-redux'
-import { fadeIn } from 'react-animations'
 import { getCurrentRotation } from '../services/championService'
 import Champion from './Champion'
 import P from './P'
-
-const fadeInAnimation = keyframes`${fadeIn}`
 
 const StyledRotationContainer = styled.div`
   display: ${({ isSearch }) => isSearch ? 'flex' : 'none'};
@@ -16,6 +13,7 @@ const StyledRotationContainer = styled.div`
   width: 100vw;
   display: flex;
   justify-content: center;
+  align-items: center;
 `
 
 const StyledWrapper = styled.div`
@@ -23,7 +21,7 @@ const StyledWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  animation: 1s ${fadeInAnimation};
+  animation: 1s ${({ theme }) => theme.animations.fadeIn};
 `
 
 const StyledChampionContainer = styled.div`
@@ -35,11 +33,15 @@ const StyledChampionContainer = styled.div`
 
 const FreeRotation = () => {
   const [rotation, setRotation] = useState()
+  const [error, setError] = useState()
   const search = useSelector(state => state.search)
 
   useEffect(() => {
     async function fetchRotationData() {
       const rotationData = await getCurrentRotation()
+      if (rotationData.error) {
+        setError(rotationData.error)
+      }
       setRotation(rotationData.freeChampionIds)
     }
     fetchRotationData()
@@ -49,7 +51,7 @@ const FreeRotation = () => {
     <StyledRotationContainer
       isSearch={search === undefined || search.length === 0}
     >
-      { rotation ? (
+      { rotation && error === undefined ? (
         <StyledWrapper>
           <P
             size="1.250em"
@@ -62,7 +64,11 @@ const FreeRotation = () => {
           </StyledChampionContainer>
         </StyledWrapper>
       ) : (
-        <div></div>
+        <P
+          size="1.250em"
+        >
+          {error}
+        </P>
       )}
     </StyledRotationContainer>
   )
