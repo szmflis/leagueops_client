@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { useSelector } from 'react-redux'
 import SingleStat from './SingleStat'
-import SearchAnimation from '../../SearchAnimation'
-import H3 from '../../H3'
+import SearchAnimation from '../../elements/SearchAnimation'
+import H3 from '../../elements/H3'
 
 const StyledWrapper = styled.div`
   background: ${({ theme }) => theme.colors.bright};

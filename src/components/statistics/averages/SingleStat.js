@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import P from '../../P'
+import P from '../../elements/P'
 
 const SingleStat = ({ info, statName }) => {
   return (

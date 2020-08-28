@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useSelector } from 'react-redux'
-import SearchAnimation from '../../SearchAnimation'
+import SearchAnimation from '../../elements/SearchAnimation'
 import { DD_PROFILE } from '../../../utils/urls'
-import P from '../../P'
+import P from '../../elements/P'
 import StyledImg from '../match_history/match_components/StyledImg'
 
 const StyledWrapper = styled.div`

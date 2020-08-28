@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { useSelector } from 'react-redux'
 import emblemArray from '../../../utils/emblems'
 import Mastery from './Mastery'
-import SearchAnimation from '../../SearchAnimation'
+import SearchAnimation from '../../elements/SearchAnimation'
 import { getChmpDataById } from '../../../utils/dataExtractHelper'
 
 const StyledMasteriesContainer = styled.div`

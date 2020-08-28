@@ -9,7 +9,7 @@ import {
   getMainPerkImg,
   getPerkImg
 } from '../../../../utils/dataExtractHelper'
-import P from '../../../P'
+import P from '../../../elements/P'
 import StyledImg from './StyledImg'
 
 const StyledImgGridContainer = styled.div`

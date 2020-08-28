@@ -12,11 +12,11 @@ export const theme = {
     bright: '#38424E',
     brightest: '#525E6D',
     white: '#ffffff',
-    complamentaryBckground: '#4E412D',
-    complamentaryDarkest: '#33240C',
-    complamentaryDark: '#4E412D',
-    complamentaryBright: '#776952',
-    complamentaryBrightest: '#A79579',
+    complementaryBackground: '#4E412D',
+    complementaryDarkest: '#33240C',
+    complementaryDark: '#4E412D',
+    complementaryBright: '#776952',
+    complementaryBrightest: '#A79579',
     wonMatch: '#2C546D',
     lostMatch: '#6F2323'
   },
@@ -32,8 +32,11 @@ export const theme = {
     bigger: '1.125em',
     huge: '1.5em'
   },
+  sizes: [0, 20, 40, 60, 80, 100, 120, 160, 200, 240, 280, 320, 360, 400],
+  spaces: [0, 2, 4, 8, 16, 32, 64, 128, 256],
+  radii: [0, 5, 10, 15, 20, 30, 40],
   animations: {
     fadeIn: fadeInAnimation,
     fadeInDown: fadeInDownAnimation
-  }
+  },
 }

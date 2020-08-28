@@ -2,9 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import { useSelector, useDispatch } from 'react-redux'
 import { MdSearch } from 'react-icons/md'
-import { setPlayerStats, resetPlayerStats } from '../reducers/playerReducer'
-import { setSearchParams, resetSearchParams } from '../reducers/searchReducer'
-import { resetNotification } from '../reducers/notificationReducer'
+import { setPlayerStats, resetPlayerStats } from '../../reducers/playerReducer'
+import { setSearchParams, resetSearchParams } from '../../reducers/searchReducer'
+import { resetNotification } from '../../reducers/notificationReducer'
 
 const StyledWrapper = styled.div`
   height: ${({ isSearch }) => isSearch ? '100vh' : '20vh'};
@@ -16,13 +16,14 @@ const StyledWrapper = styled.div`
 const StyledForm = styled.form`
   display:flex;
   justify-content: center;
-  animation: 1s ${({ theme }) => theme.animations.fadeInDown}
+  animation: 2s ${({ theme }) => theme.animations.fadeIn}
 `
 
 const StyledInput = styled.input`
   width: 40vw;
   height: 5vh;
-  min-height: 50px;
+  min-height: ${({ theme }) => theme.spaces[2]}px;
+  min-width: ${({ theme }) => theme.spaces[13]}px;
   background: ${({ theme }) => theme.colors.white};
   font-size: ${({ theme }) => theme.fontSize.huge};
   padding: 5px;
@@ -108,7 +109,9 @@ const PlayerSearchForm = () => {
           placeholder="Select player name and region (case sensitive)"
           required="true"
         />
-        <StyledButton><StyledSearchIcon /></StyledButton>
+        <StyledButton>
+          <StyledSearchIcon />
+        </StyledButton>
       </StyledForm>
     </StyledWrapper>
   )

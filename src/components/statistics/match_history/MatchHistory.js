@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useSelector } from 'react-redux'
-import SearchAnimation from '../../SearchAnimation'
+import SearchAnimation from '../../elements/SearchAnimation'
 import Match from './Match'
 
 const StyledMatchContainer = styled.div`

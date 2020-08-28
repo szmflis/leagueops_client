@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
-import P from '../../../../P'
+import P from '../../../../elements/P'
 
 const StyledSpan = styled.span`
   color: ${({ color, theme }) => color || theme.colors.white};

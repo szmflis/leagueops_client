@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { CHMP_SPLASH_URL } from '../../../utils/urls'
-import P from '../../P'
+import P from '../../elements/P'
 
 const StyledMasteryContainer = styled.div`
   background-image: ${({ bckgroundName }) => `url(${CHMP_SPLASH_URL}/${bckgroundName}_0.jpg)`};

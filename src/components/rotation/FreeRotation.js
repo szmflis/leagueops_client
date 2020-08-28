@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { useSelector } from 'react-redux'
-import { getCurrentRotation } from '../services/championService'
+import { getCurrentRotation } from '../../services/championService'
 import Champion from './Champion'
-import P from './P'
+import P from '../elements/P'
 
 const StyledRotationContainer = styled.div`
   display: ${({ isSearch }) => isSearch ? 'flex' : 'none'};
