@@ -9,17 +9,17 @@ import MatchHistory from './match_history/MatchHistory'
 const StyledContainer = styled.div`
   display: ${({ isSearch }) => isSearch ? 'none' : 'flex'};
   visibility: ${({ isSearch }) => isSearch ? 'hidden' : 'visible'};
-  height: 80vh;
-  width: 100vw;
   background: ${({ theme }) => theme.colors.background};
+  height: auto;
+  width: 100vw;
   justify-content: center;
 `
 
 const StyledStatsContainer = styled.div`
   display: flex;
-  width: 63vw;
+  min-width: 60vw;
   max-width: 1200px;
-  height: 60vh;
+  height: auto;
 `
 
 const StyledAvgPlrTraitsContainer = styled.div`
@@ -32,7 +32,7 @@ const StyledAvgPlrTraitsContainer = styled.div`
 const StyledMasteriesHistoryContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 50vw;
+  width: 40vw;
   min-width: 800px;
 `
 

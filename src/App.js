@@ -1,23 +1,16 @@
-import React from 'react';
-import { useSelector } from 'react-redux'
+import React from 'react'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Navbar from './components/navbar/Navbar'
-import PlayerSearchForm from './components/searchform/PlayerSearchForm'
-import PlayerStatistics from './components/statistics/PlayerStatistics'
-import Notification from './components/notification/Notification'
 import Layout from './layout/Layout'
-import FreeRotation from './components/rotation/FreeRotation'
+import Home from './pages/Home'
 
 const App = () => {
-  const notification = useSelector(state => state.notification)
-
   return (
     <Layout>
-      <Navbar />
-      <PlayerSearchForm />
-      {notification === null
-        ? <PlayerStatistics />
-        : <Notification />}
-      <FreeRotation />
+      <Router>
+        <Navbar />
+        <Route exact path="/" render={() => <Home />} />
+      </Router>
     </Layout>
   )
 }

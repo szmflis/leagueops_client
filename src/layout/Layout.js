@@ -9,15 +9,15 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
 
-  html{
+  html, body {
     height: 100%;
+    width: 100%;
   }
 
   body {
     font-family: 'Montserrat';
     color: #ffffff;
     background: ${({ theme }) => theme.colors.background};
-    min-height: 100%;
   }
 
   *, *:: before, *::after {
@@ -28,10 +28,11 @@ const GlobalStyle = createGlobalStyle`
 const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   background: ${({ theme }) => theme.colors.background};
-  height: 100vh;
+  width: 100%;
+  min-height: 100%;
 `
 
 const Layout = ({ children }) => (

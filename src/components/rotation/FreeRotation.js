@@ -9,11 +9,13 @@ const StyledRotationContainer = styled.div`
   display: ${({ isSearch }) => isSearch ? 'flex' : 'none'};
   visibility: ${({ isSearch }) => isSearch ? 'visible' : 'hidden'};
   background: ${({ theme }) => theme.colors.dark};
-  height: 200px;
+  height: 150px;
   width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
+  bottom: 0;
+  position: fixed;
 `
 
 const StyledWrapper = styled.div`
