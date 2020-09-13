@@ -6,7 +6,7 @@ import SearchAnimation from '../../elements/SearchAnimation'
 import H3 from '../../elements/H3'
 
 const StyledWrapper = styled.div`
-  background: ${({ theme }) => theme.colors.bright};
+  background: ${({ theme }) => theme.colors.primaryBright};
   margin: 5px;
   border-radius: 5px; 
 `
@@ -20,8 +20,6 @@ const StyledAvgsContainer = styled.div`
 `
 
 const StatsBoxAverages = () => {
-  // All matches and stats are to be kept inside the store's state
-  // for use in later stages of the application
   const playerData = useSelector(state => state.player.combinedStats)
 
   const generateStatParagraphs = () => {
@@ -35,7 +33,6 @@ const StatsBoxAverages = () => {
     const assists = (playerData.assists / playerData.games).toFixed(1)
     const deaths = (playerData.deaths / playerData.games).toFixed(1)
     return (
-      // Change
       <StyledAvgsContainer>
         <H3 paddingBottom="5px">Averages per game</H3>
         <SingleStat

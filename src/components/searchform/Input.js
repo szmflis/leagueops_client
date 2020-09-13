@@ -25,7 +25,7 @@ const StyledButton = styled.button`
   border: none;
   outline: none;
   border-radius: 0px 10px 10px 0px;
-  background: ${({ theme }) => theme.colors.darkest};
+  background: ${({ theme }) => theme.colors.primaryDarkest};
   font-size: ${({ theme }) => theme.fontSize.bigger};
   font-weight: ${({ theme }) => theme.fontWeight.bold};
   color: ${({ theme }) => theme.colors.white};
@@ -66,7 +66,7 @@ const Input = () => {
       <StyledInput
         name="search"
         placeholder="Select player name and region (case sensitive)"
-        required="true"
+        required
       />
       <StyledButton>
         <StyledSearchIcon />

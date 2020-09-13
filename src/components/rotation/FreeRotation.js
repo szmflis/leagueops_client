@@ -6,9 +6,7 @@ import Champion from './Champion'
 import P from '../elements/P'
 
 const StyledRotationContainer = styled.div`
-  display: ${({ isSearch }) => isSearch ? 'flex' : 'none'};
-  visibility: ${({ isSearch }) => isSearch ? 'visible' : 'hidden'};
-  background: ${({ theme }) => theme.colors.dark};
+  background: ${({ theme }) => theme.colors.primaryDark};
   height: 150px;
   width: 100vw;
   display: flex;
@@ -16,6 +14,9 @@ const StyledRotationContainer = styled.div`
   align-items: center;
   bottom: 0;
   position: fixed;
+
+  opacity: ${({ isSearch }) => isSearch ? '1' : '0'};
+  transition: opacity 2s;
 `
 
 const StyledWrapper = styled.div`

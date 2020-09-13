@@ -7,7 +7,7 @@ import P from '../../elements/P'
 import StyledImg from '../match_history/match_components/StyledImg'
 
 const StyledWrapper = styled.div`
-  background: ${({ theme }) => theme.colors.bright};
+  background: ${({ theme }) => theme.colors.primaryBright};
   margin: 5px;
   border-radius: 5px;
 `
@@ -28,7 +28,7 @@ const StyledNameLvlContainer = styled.div`
 
 const StyledImgNameContainer = styled.div`
   display: flex;
-  background: ${({ theme }) => theme.colors.darkest};
+  background: ${({ theme }) => theme.colors.primaryDarkest};
   align-items: center;
 `
 

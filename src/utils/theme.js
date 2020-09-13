@@ -6,17 +6,13 @@ const fadeInDownAnimation = keyframes`${fadeInDown}`
 
 export const theme = {
   colors: {
-    background: '#1F2833',
-    darkest: '#0A1421',
-    dark: '#141F2D',
-    bright: '#38424E',
-    brightest: '#525E6D',
     white: '#ffffff',
-    complementaryBackground: '#4E412D',
-    complementaryDarkest: '#33240C',
-    complementaryDark: '#4E412D',
-    complementaryBright: '#776952',
-    complementaryBrightest: '#A79579',
+    primaryBackground: '#1F2833',
+    primaryBackgroundLight: '#1d252f',
+    primaryDarkest: '#0A1421',
+    primaryDark: '#141F2D',
+    primaryBright: '#38424E',
+    primaryBrightest: '#525E6D',
     wonMatch: '#2C546D',
     lostMatch: '#6F2323'
   },

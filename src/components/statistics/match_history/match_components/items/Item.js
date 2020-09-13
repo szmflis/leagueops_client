@@ -21,7 +21,7 @@ const Item = ({ url, id }) => {
       />
       <StyledTooltip id={url}>
         {
-          id === undefined
+          id === 0
             ? <span>Empty Item Slot</span>
             : <ItemTooltip data={getItemData(id)} />
         }
@@ -33,7 +33,11 @@ const Item = ({ url, id }) => {
 
 Item.propTypes = {
   url: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired
+  id: PropTypes.number
+}
+
+Item.defaultProps = {
+  id: 0
 }
 
 export default Item

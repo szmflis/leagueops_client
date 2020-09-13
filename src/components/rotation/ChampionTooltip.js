@@ -30,7 +30,7 @@ const ChampionTooltip = ({
       <P color="aqua" size="1em">
         Partype:&emsp;{partype}
       </P>
-      {tags.map(tag => <P color="white" size="1em">{tag}</P>)}
+      {tags.map(tag => <P color="white" size="1em" key={tag}>{tag}</P>)}
     </>
   )
 }

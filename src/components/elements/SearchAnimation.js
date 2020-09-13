@@ -11,11 +11,11 @@ const spin = keyframes`
 `
 
 const StyledSearch = styled.div`
-  border: 16px solid #9e00c5;
-  border-top: 16px solid #d500f9;
+  border: 10px solid FireBrick;
+  border-top: 10px solid red;
   border-radius: 50%;
-  width: 130px;
-  height: 130px;
+  width: 100px;
+  height: 100px;
   animation: ${spin} 2s linear infinite;
   margin: 10px auto 10px auto;
   grid-column: 2/3;

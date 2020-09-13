@@ -19,14 +19,12 @@ const StyledMatchContainer = styled.div`
   margin-bottom: 5px;
   align-items: center;
   background: ${({ win, theme }) => win ? theme.colors.wonMatch : theme.colors.lostMatch};
-  animation: 1s ${({ theme }) => theme.animations.fadeIn}
+  animation: 1s ${({ theme }) => theme.animations.fadeIn};
 `
-
 const Match = ({ match }) => {
   const playerInfo = useSelector(state => state.player.playerInfo)
 
   const renderCurrentPlayerData = () => {
-    console.log(match)
     const currentPlayer = match.players.find(
       player => player.identity.player.summonerName === playerInfo.name
     )
@@ -79,9 +77,6 @@ const Match = ({ match }) => {
   )
 }
 
-/*
-
-*/
 Match.propTypes = {
   match: PropTypes.shape({
     players: PropTypes.arrayOf(PropTypes.shape({

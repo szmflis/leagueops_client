@@ -7,8 +7,8 @@ import { resetNotification } from '../../reducers/notificationReducer'
 import Input from './Input'
 
 const StyledWrapper = styled.div`
-  height: ${({ isSearch }) => isSearch ? '80vh' : '20vh'};
-  background: ${({ theme }) => theme.colors.background};
+  height: ${({ isSearch }) => isSearch ? '80vh' : '10vh'};
+  background: ${({ theme }) => theme.colors.primaryBackground};
   display: flex;
   align-items: center;
 `

@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 const StyledNotification = styled.div`
   display: ${({ isSearch }) => isSearch ? 'none' : 'flex'};
   visibility: ${({ isSearch }) => isSearch ? 'hidden' : 'visible'};
-  background: ${({ theme }) => theme.colors.background};
+  background: ${({ theme }) => theme.colors.primaryBackground};
   font-size: ${({ theme }) => theme.fontSize.huge};
   height: 80vh;
   width: 100vw;

@@ -9,7 +9,7 @@ import MatchHistory from './match_history/MatchHistory'
 const StyledContainer = styled.div`
   display: ${({ isSearch }) => isSearch ? 'none' : 'flex'};
   visibility: ${({ isSearch }) => isSearch ? 'hidden' : 'visible'};
-  background: ${({ theme }) => theme.colors.background};
+  background: ${({ theme }) => theme.colors.primaryBackground};
   height: auto;
   width: 100vw;
   justify-content: center;
@@ -20,6 +20,10 @@ const StyledStatsContainer = styled.div`
   min-width: 60vw;
   max-width: 1200px;
   height: auto;
+
+  padding: 8px;
+  border-radius: 5px;
+  background: ${({ theme }) => theme.colors.primaryBackgroundLight};
 `
 
 const StyledAvgPlrTraitsContainer = styled.div`

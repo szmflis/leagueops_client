@@ -11,7 +11,7 @@ const StyledMasteriesContainer = styled.div`
   grid-template-columns: 33% 34% 33%;
   grid-template-rows: 100%;
   margin: 5px;
-  background: ${({ theme }) => theme.colors.bright};
+  background: ${({ theme }) => theme.colors.primaryBright};
   border-radius: 5px;
 `
 
