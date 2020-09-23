@@ -5,3 +5,4 @@ export const CHMP_SPLASH_URL = 'https://ddragon.leagueoflegends.com/cdn/img/cham
 export const SUMM_SPELL_URL = 'https://ddragon.leagueoflegends.com/cdn/10.16.1/img/spell'
 export const ITEM_IMG_URL = 'https://ddragon.leagueoflegends.com/cdn/10.16.1/img/item'
 export const EMPTY_IMG_URL = 'https://opgg-static.akamaized.net/images/pattern/opacity.1.png'
+export const API_URL = 'https://leagueops.herokuapp.com'
